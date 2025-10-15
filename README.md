@@ -37,7 +37,4 @@ python src/preprocess.py --input data/raw --output data/processed
 python src/indices.py --input data/processed --output data/indices
 ```
 
-Como contribuir
-- Veja `docs/README.md` para arquitetura, indicadores e instruções de contribuição.
 
-Licença: MIT
