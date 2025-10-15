@@ -1,0 +1,13 @@
+pandas>=1.5
+geopandas>=0.13
+scikit-learn>=1.2
+requests>=2.31
+pyyaml
+sqlalchemy
+psycopg2-binary
+google-cloud-bigquery
+dbt-core>=1.5
+streamlit
+fastparquet
+fsspec
+alive-progress

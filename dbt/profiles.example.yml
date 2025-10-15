@@ -1,0 +1,11 @@
+data_vulnerabilidade:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: dev
+      password: dev
+      port: 5432
+      dbname: vulnerabilities
+      schema: public

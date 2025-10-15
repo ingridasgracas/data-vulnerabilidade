@@ -1,0 +1,9 @@
+name: 'data_vulnerabilidade'
+version: '0.1'
+config-version: 2
+profile: 'data_vulnerabilidade'
+source-paths: ["models"]
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+target-path: "target"
+clean-targets: ["target"]

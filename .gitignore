@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.*
+
+# Data
+data/raw/
+data/processed/
+data/indices/
+data/seeds/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# dbt
+dbt/target/
+profiles.yml
+
+# Others
+.pytest_cache/
+.mypy_cache/

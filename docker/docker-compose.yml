@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: vulnerabilities
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  dbt:
+    image: dbt-labs/dbt:1.5.0
+    environment:
+      DBT_PROFILES_DIR: /project/dbt
+    volumes:
+      - ..:/project
+    depends_on:
+      - postgres
+
+  streamlit:
+    build: ./streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ..:/app
+    depends_on:
+      - postgres
+
+  airflow:
+    image: apache/airflow:2.6.3
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../:/opt/airflow/dags
+    restart: always
+
+volumes:
+  pgdata:

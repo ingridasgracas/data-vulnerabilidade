@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: municipios_enriched
+    description: "Municipalities enriched with socio-economic indicators"
+    columns:
+      - name: municipio_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_ibge_population
+    description: "Seeded IBGE population (bronze)"
+    columns:
+      - name: municipio_id
+        tests:
+          - not_null
+          - unique
+      - name: populacao
+        tests:
+          - not_null
+
+  - name: vulnerability_index
+    description: "Final vulnerability score per municipality"
+    columns:
+      - name: vulnerability_score
+        tests:
+          - not_null
